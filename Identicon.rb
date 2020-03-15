@@ -52,15 +52,6 @@ class Identicon
         png.rect(j*size, i*size, (j+1)*size, (i+1)*size, color, color) if @schema[i][j] == 1
       end
     end
-    png.save("#{@user_name}.png", :interlace => true)
+    png.save("#{@path}/#{@user_name}.png", :interlace => true)
   end
 end
-
-identicon = Identicon.new 'valov'
-identicon.generate
-
-identicon = Identicon.new 'aanna'
-identicon.generate
-
-identicon = Identicon.new 'lea'
-identicon.generate
