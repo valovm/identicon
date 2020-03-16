@@ -11,7 +11,7 @@ icon.generate
 
 ## Options
 
-I can pass options to customize
+You can pass options to customize
 
     background: (String, default '#ccc') the background color
     grid:       (Integer, default 5, range 4..12) - the number of rows and collumns for grid
