@@ -7,7 +7,7 @@ describe Identicon do
   around(:all) do |example|
     Dir.mkdir(test_folder) unless File.directory?(test_folder)
     example.run
-    # FileUtils.rm_rf(test_folder)
+    FileUtils.rm_rf(test_folder)
   end
 
   it 'unvalid' do
