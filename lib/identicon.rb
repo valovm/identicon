@@ -33,7 +33,7 @@ class Identicon
   end
 
   def init_hash
-    @hash =Digest::MD5.hexdigest(@user_name)
+    @hash = Digest::MD5.hexdigest(@user_name)
   end
 
   def init_color

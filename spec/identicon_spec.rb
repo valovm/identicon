@@ -1,8 +1,13 @@
 require 'helpers'
 
 describe Identicon do
-  before(:each) do
-    Dir.mkdir('tmp') unless File.directory?('tmp')
+
+  test_folder = 'test_files'
+
+  around(:all) do |example|
+    Dir.mkdir(test_folder) unless File.directory?(test_folder)
+    example.run
+    # FileUtils.rm_rf(test_folder)
   end
 
   it 'unvalid' do
@@ -13,9 +18,9 @@ describe Identicon do
   end
 
   it 'creates a identicon\' image ' do
-    identicon = Identicon.new('valov', 'tmp')
+    identicon = Identicon.new('valov', test_folder)
     identicon.generate
-    result = File.exist?('tmp/valov.png')
+    result = File.exist?("#{test_folder}/valov.png")
     expect(result).to be_truthy
   end
 end
